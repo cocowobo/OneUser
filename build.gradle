@@ -1,0 +1,29 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+/*清理未使用的资源的插件*/
+apply plugin: 'com.droidtitan.lintcleaner'
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.2.3'
+        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
+        /*清理未使用的资源的插件*/
+        classpath 'com.droidtitan:lint-cleaner-plugin:0.3.0'
+        /*java1.8 lambda语法支持插件*/
+        classpath 'me.tatarka:gradle-retrolambda:3.4.0'
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

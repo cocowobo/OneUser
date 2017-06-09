@@ -1,0 +1,22 @@
+<resources>
+	<!--大家从这张图可以看到 4 个颜色区域——
+	colorPrimary（原色）、colorAccent（色彩突显）、color Primary Dark（色原变暗）以及 colorControlNormal 区。
+	colorPrimary（原色）：它作为应用的主要色调，一般是操作栏和最近任务的背景色。
+	colorAccent（色彩突显）：它是原色的强调色彩，应用在框架控制上。
+	color Primary Dark（色原变暗）：原色的变暗色调，应用在状态栏上。
+	colorControlNormal则是应用在图标上。
+	-->
+	<style name="AppTheme" parent="AppBaseTheme">
+		<item name="colorPrimary">@color/colorPrimary</item>                      <!--Appbar背景颜色colorPrimary设置ActionBar的颜色，并不能设置ToolBar的颜色-->
+		<item name="android:colorPrimary">@color/colorPrimary</item>              <!--无效,加android:的colorPrimary是无效的-->
+		<item name="android:textColorPrimary">@color/textColorPrimary</item>      <!--toolBar上的Title字体颜色-->
+		<item name="android:colorPrimaryDark">@color/red</item>      <!--会默认设置为status bar(状态栏)的颜色。-->
+		<item name="android:colorAccent">@color/colorAccent</item>                <!--各种选中按钮和进度按钮光标等按钮颜色--><!--控制各个控件被选中时的颜色-->
+		<item name="android:statusBarColor">@color/statusBarColor</item>          <!--状态栏颜色-->
+		<item name="android:navigationBarColor">@color/navigationColor</item>     <!--在很多4.4系统的设备中，屏蔽了底部导航栏着色，建议在5.0系统之前不要设置底部导航栏。-->
+		<item name="android:colorControlNormal">@color/colorControlNormal</item>  <!--各个控制控件的默认颜色-->
+		<item name="android:windowBackground">@null</item>                        <!--页面背景色-->
+		<item name="android:windowDisablePreview">true</item>
+	</style>
+
+</resources>

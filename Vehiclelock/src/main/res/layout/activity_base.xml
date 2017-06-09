@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/coordinatorlayout"
+	style="@style/MatchParent">
+	
+	<FrameLayout
+		android:id="@+id/content"
+		style="@style/MatchParent"
+		android:orientation="vertical"
+		tools:showIn="@layout/activity_base" />
+	
+	<android.support.design.widget.AppBarLayout
+		android:id="@+id/appbarlayout"
+		style="@style/WidthMatchParent"
+		app:layout_behavior="com.peipao8.vehiclelock.Behavior.MyBehavior"
+		android:theme="@style/AppTheme.AppBarOverlay"
+		app:elevation="0dp">
+		
+		<include layout="@layout/activity_toolbar"></include>
+	</android.support.design.widget.AppBarLayout>
+	<com.peipao8.vehiclelock.CustomerView.TempView
+		android:layout_width="100dp"
+		android:layout_height="100dp"
+		android:layout_marginLeft="300dp"
+		android:layout_marginTop="300dp"
+		android:background="#3366CC"
+		android:visibility="gone"
+		android:tag="10" />
+</android.support.design.widget.CoordinatorLayout>

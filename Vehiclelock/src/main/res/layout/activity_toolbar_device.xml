@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:id="@+id/toolbar"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:minHeight="?attr/actionBarSize"
+	app:contentInsetEnd="0dp"
+	app:contentInsetLeft="0dp"
+	app:contentInsetRight="0dp"
+	app:contentInsetStart="0dp"
+	app:layout_scrollFlags="scroll|enterAlways|snap"
+	app:popupTheme="@style/AppTheme.PopupOverlay">
+	
+	<RelativeLayout
+		android:layout_width="match_parent"
+		android:layout_height="?attr/actionBarSize">
+		
+		<ImageView
+			android:id="@+id/toolbar_iv_left"
+			android:layout_width="wrap_content"
+			android:layout_height="match_parent"
+			android:layout_alignParentLeft="true"
+			android:paddingLeft="15dp"
+			android:paddingRight="15dp"
+			android:scaleType="centerInside"
+			android:src="@drawable/backreturn" />
+		
+		<TextView
+			android:id="@+id/toolbar_tv_title"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_centerInParent="true"
+			android:gravity="center"
+			android:text="我的设备"
+			android:textColor="@color/textColorPrimary"
+			android:textSize="@dimen/font_super_big_one" />
+		
+		<ImageView
+			android:id="@+id/toolbar_iv_right"
+			android:layout_width="wrap_content"
+			android:layout_height="match_parent"
+			android:layout_alignParentRight="true"
+			android:paddingLeft="15dp"
+			android:paddingRight="15dp"
+			android:visibility="gone"
+			android:scaleType="centerInside"
+			android:src="@drawable/binding" />
+		
+		<TextView
+			android:paddingLeft="15dp"
+			android:paddingRight="15dp"
+			android:id="@+id/toolbar_tv_right"
+			android:layout_width="wrap_content"
+			android:layout_height="match_parent"
+			android:layout_alignParentRight="true"
+			android:text="添加"
+			android:gravity="center"
+			android:textColor="@color/textColorPrimary"
+			android:textSize="@dimen/font_medium" />
+	</RelativeLayout>
+
+</android.support.v7.widget.Toolbar>

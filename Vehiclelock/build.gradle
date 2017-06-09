@@ -1,0 +1,113 @@
+apply plugin: 'com.android.application'
+apply plugin: 'android-apt'
+/*下面两个插件式java1.8 lambda语法插件应用*/
+apply plugin: 'com.android.application'
+apply plugin: 'me.tatarka.retrolambda'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.3"
+    defaultConfig {
+        applicationId "com.peipao8.vehiclelock"
+        minSdkVersion 19
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            // 显示Log
+            buildConfigField "boolean", "LOG_DEBUG", "true"
+            versionNameSuffix "-debug"
+            minifyEnabled false
+            zipAlignEnabled false
+            shrinkResources false
+            signingConfig signingConfigs.debug
+        }
+
+        release {
+            // 不显示Log
+            buildConfigField "boolean", "LOG_DEBUG", "false"
+            //混淆
+            minifyEnabled true
+            //Zipalign优化
+            zipAlignEnabled true
+
+            // 移除无用的resource文件
+            shrinkResources true
+            //前一部分代表系统默认的android程序的混淆文件，该文件已经包含了基本的混淆声明，后一个文件是自己的定义混淆文件
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            //签名
+            signingConfig signingConfigs.release
+
+            applicationVariants.all { variant ->
+                variant.outputs.each { output ->
+                    def outputFile = output.outputFile
+                    if (outputFile != null && outputFile.name.endsWith('.apk')) {
+                        // 输出apk名称为app_v1.0_2015-xx-xx_xxxx.apk
+                        //def fileName = "app_v${defaultConfig.versionName}_${releaseTime()}.apk"
+                        def fileName = "app_v${defaultConfig.versionName}_${variant.productFlavors[0].name}.apk"
+                        output.outputFile = new File(outputFile.parent, fileName)
+                    }
+                }
+            }
+        }
+
+    }
+
+    //执行lint检查，有任何的错误或者警告提示，都会终止构建，我们可以将其关掉。
+    lintOptions {
+        abortOnError false
+    }
+
+    compileOptions {
+        /** lambda 语法支持要写这个,同时在最外层build.gradle中配置
+         * <---androd studio 本身也有lambda支持插件,但是不好用如: AS新版本java8新特性需要jack工具链
+         * 使用Jack时不能同时使用APT，暂时不兼容。包括butterknife，Dagger等使用了APT的注解框架--->),
+         *于是使用下面的方法引入第三方插件:
+         * java1.8 lambda语法支持插件--- classpath 'me.tatarka:gradle-retrolambda:3.4.0'
+         * 并且在本文件的最上面引入两个插件
+         * apply plugin: 'com.android.application'
+         * apply plugin: 'me.tatarka.retrolambda'
+         */
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+//    compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha8'
+    testCompile 'junit:junit:4.12'
+    //----------------控件支持包-----------
+    /*自动引入recyclerview和apppcompat v7*/
+    compile 'com.android.support:design:23.4.0'
+    //----------------------------第三方区域----------------
+    //----------------严振杰的封装recyclerview
+    compile 'com.yanzhenjie:recyclerview-swipe:1.0.2'
+    //----------------注解注入支持(8.1.0版本)-----------
+    //1.引入依赖两个依赖( compile 'com.jakewharton:butterknife:8.1.0'和apt 'com.jakewharton:butterknife-compiler:8.1.0')
+    //2.外层工作区间build.gradle添加 classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
+    //3.本文件最顶上添加插件使用 apply plugin: 'android-apt'
+    compile 'com.jakewharton:butterknife:8.1.0'
+    apt 'com.jakewharton:butterknife-compiler:8.1.0'
+    //----------------网络访问NoHttp(使用OkHttp作为网络层)-----------
+    compile 'com.yanzhenjie.nohttp:nohttp:1.1.1'
+    compile 'com.yanzhenjie.nohttp:okhttp:1.1.1'
+    //----------------Dexopt 分包 支持-----------
+    compile 'com.android.support:multidex:1.0.0'
+    compile files('libs/fastjson-1.2.9.jar')
+    //    //张鸿洋Px像素适配布局库
+    //    compile 'com.zhy:autolayout:1.4.5'
+    compile files('libs/systembartint-1.0.4.jar')
+}

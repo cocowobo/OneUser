@@ -1,0 +1,12 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	style="@style/WidthMatchParent"
+	android:orientation="vertical"
+	android:padding="10dp">
+	
+	<Button
+		android:onClick="clickDownload"
+		android:id="@+id/btn_start_download"
+		style="@style/WidthMatchParent"
+		android:text="@string/download_start" />
+
+</LinearLayout>

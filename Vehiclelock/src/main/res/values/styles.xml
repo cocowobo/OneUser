@@ -1,0 +1,138 @@
+<resources>
+	
+	<style name="AppBaseTheme" parent="Theme.AppCompat.Light.NoActionBar"></style>
+	
+	<style name="AppTheme" parent="AppBaseTheme">
+		<item name="colorPrimary">@color/colorPrimary</item>            <!--标题栏颜色-->
+		<item name="colorPrimaryDark">@color/colorPrimaryDark</item>    <!--状态栏颜色-->
+		<item name="colorAccent">@color/colorAccent</item>              <!--各种选中按钮和进度按钮光标等按钮颜色-->
+	</style>
+	<!--解决appbarlayout和toolbar的阴影主题方案-->
+	<!--<style name="Widget.Design.AppBarLayout" parent="android:Widget">-->
+		<!--<item name="elevation">0dp</item>-->
+		<!--<item name="android:background">?attr/colorPrimary</item>-->
+	<!--</style>-->
+	
+	<style name="MatchParent">
+		<item name="android:layout_width">match_parent</item>
+		<item name="android:layout_height">match_parent</item>
+	</style>
+	
+	<style name="MatchParent.Gravity">
+		<item name="android:gravity">center</item>
+	</style>
+	
+	<style name="MatchParent.Gravity.V">
+		<item name="android:gravity">center_vertical</item>
+	</style>
+	
+	<style name="MatchParent.Gravity.H">
+		<item name="android:gravity">center_horizontal</item>
+	</style>
+	
+	<style name="MatchParent.ParentGravity">
+		<item name="android:layout_gravity">center</item>
+	</style>
+	
+	<style name="MatchParent.ParentGravity.H">
+		<item name="android:layout_gravity">center_horizontal</item>
+	</style>
+	
+	<style name="MatchParent.ParentGravity.V">
+		<item name="android:layout_gravity">center_vertical</item>
+	</style>
+	<!---->
+	<style name="WrapContent">
+		<item name="android:layout_width">wrap_content</item>
+		<item name="android:layout_height">wrap_content</item>
+	</style>
+	
+	<style name="WrapContent.Gravity">
+		<item name="android:gravity">center</item>
+	</style>
+	
+	<style name="WrapContent.Gravity.V">
+		<item name="android:gravity">center_vertical</item>
+	</style>
+	
+	<style name="WrapContent.Gravity.H">
+		<item name="android:gravity">center_horizontal</item>
+	</style>
+	
+	<style name="WrapContent.ParentGravity">
+		<item name="android:layout_gravity">center</item>
+	</style>
+	
+	<style name="WrapContent.ParentGravity.H">
+		<item name="android:layout_gravity">center_horizontal</item>
+	</style>
+	
+	<style name="WrapContent.ParentGravity.V">
+		<item name="android:layout_gravity">center_vertical</item>
+	</style>
+	
+	<!---->
+	<style name="WidthMatchParent">
+		<item name="android:layout_width">match_parent</item>
+		<item name="android:layout_height">wrap_content</item>
+	</style>
+	
+	<style name="WidthMatchParent.Gravity">
+		<item name="android:gravity">center</item>
+	</style>
+	
+	<style name="WidthMatchParent.Gravity.V">
+		<item name="android:gravity">center_vertical</item>
+	</style>
+	
+	<style name="WidthMatchParent.Gravity.H">
+		<item name="android:gravity">center_horizontal</item>
+	</style>
+	
+	<style name="WidthMatchParent.ParentGravity">
+		<item name="android:layout_gravity">center</item>
+	</style>
+	
+	<style name="WidthMatchParent.ParentGravity.H">
+		<item name="android:layout_gravity">center_horizontal</item>
+	</style>
+	
+	<style name="WidthMatchParent.ParentGravity.V">
+		<item name="android:layout_gravity">center_vertical</item>
+	</style>
+	
+	<!---->
+	<style name="HeightMatchParent">
+		<item name="android:layout_width">wrap_content</item>
+		<item name="android:layout_height">match_parent</item>
+	</style>
+	
+	<style name="HeightMatchParent.Gravity">
+		<item name="android:gravity">center</item>
+	</style>
+	
+	<style name="HeightMatchParent.Gravity.V">
+		<item name="android:gravity">center_vertical</item>
+	</style>
+	
+	<style name="HeightMatchParent.Gravity.H">
+		<item name="android:gravity">center_horizontal</item>
+	</style>
+	
+	<style name="HeightMatchParent.ParentGravity">
+		<item name="android:layout_gravity">center</item>
+	</style>
+	
+	<style name="HeightMatchParent.ParentGravity.H">
+		<item name="android:layout_gravity">center_horizontal</item>
+	</style>
+	
+	<style name="HeightMatchParent.ParentGravity.V">
+		<item name="android:layout_gravity">center_vertical</item>
+	</style>
+	<!---->
+	<style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+	
+	<style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+</resources>

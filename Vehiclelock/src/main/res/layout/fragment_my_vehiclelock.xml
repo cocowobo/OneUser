@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+	android:background="@drawable/back"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+	<TextView
+		android:id="@+id/tv_device_name_display"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:background="@drawable/background_fillet_right_device_name"
+		android:layout_marginTop="31dp"
+		android:gravity="center"
+		android:text="A-1206"
+		android:paddingTop="5dp"
+		android:paddingBottom="5dp"
+		android:paddingLeft="15dp"
+		android:paddingRight="15dp"
+		android:textColor="@color/textColorPrimary"
+		android:textSize="@dimen/font_medium"
+		android:layout_alignParentTop="true"/>
+	<TextView
+		android:id="@+id/tv_power_display1"
+		android:drawableLeft="@drawable/battery"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:gravity="center"
+		android:text="100%"
+		android:paddingTop="5dp"
+		android:paddingBottom="5dp"
+		android:paddingLeft="15dp"
+		android:paddingRight="10dp"
+		android:textColor="@color/textColorPrimary"
+		android:textSize="@dimen/font_medium"
+		android:layout_alignTop="@id/tv_device_name_display"
+		android:layout_alignParentEnd="true"/>
+	
+</RelativeLayout>

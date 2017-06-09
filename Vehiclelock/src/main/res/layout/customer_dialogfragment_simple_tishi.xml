@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/total_layout"
+	android:orientation="vertical"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content" >
+
+	<!--弹框的标题区。默认是竖直布局-->
+	<LinearLayout
+		android:id="@+id/title_ll"
+		android:gravity="center"
+		android:orientation="vertical"
+		android:background="#3F7F9A"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content">
+
+		<!--标题-->
+		<TextView
+			android:id="@+id/title_tv_def"
+			android:text="标题"
+			android:padding="5dp"
+			android:gravity="center"
+			android:textSize="18sp"
+			android:textColor="@color/white"
+			android:layout_weight="1"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent" />
+	</LinearLayout>
+
+	<!--弹框的内容区。默认是竖直布局-->
+	<LinearLayout
+		android:id="@+id/content_ll"
+		android:gravity="center"
+		android:orientation="vertical"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content">
+		<!--标题-->
+		<TextView
+			android:id="@+id/content_tv_def"
+			android:text="显示内容"
+			android:padding="10dp"
+			android:gravity="center|left"
+			android:textSize="14sp"
+			android:textColor="@color/black"
+			android:layout_weight="1"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent" />
+	</LinearLayout>
+
+	<View
+		android:layout_height="1dp"
+		android:layout_width="match_parent"
+		android:background="#3F7F9A"  />
+
+	<!--弹框的点击区。取消或者返回-->
+	<LinearLayout
+		android:id="@+id/click_ll"
+		android:gravity="center"
+		android:orientation="horizontal"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content">
+		<!--取消-->
+		<TextView
+			android:id="@+id/cancal_tv_def"
+			android:text="取消"
+			android:padding="5dp"
+			android:gravity="center"
+			android:textSize="16sp"
+			android:textColor="#0D9B8D"
+			android:layout_weight="1"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent" />
+
+		<TextView
+			android:layout_width="1dp"
+			android:layout_height="match_parent"
+			android:background="#3F7F9A"  />
+		<!--确定-->
+		<TextView
+			android:id="@+id/confirm_tv_def"
+			android:text="确定"
+			android:padding="5dp"
+			android:gravity="center"
+			android:textSize="16sp"
+			android:textColor="#0D9B8D"
+			android:layout_weight="1"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent" />
+	</LinearLayout>
+
+	<View
+		android:layout_height="1dp"
+		android:layout_width="match_parent"
+		android:background="#3F7F9A"  />
+
+</LinearLayout>

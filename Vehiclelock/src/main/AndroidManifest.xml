@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+	package="com.peipao8.vehiclelock">
+	<uses-permission android:name="android.permission.CAMERA"/>
+	<uses-permission android:name="android.permission.VIBRATE" />
+	<uses-permission android:name="android.permission.FLASHLIGHT" />
+	<!-- 获取状态码 -->
+	<uses-permission android:name="android.permission.BLUETOOTH" />
+	<uses-permission android:name="android.permission.READ_PHONE_STATE" />
+	<!-- 开机启动 -->
+	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+	<!-- 读写存储卡 -->
+	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+	/**************************************高德地图***********************************/
+	// Normal Permissions 不需要运行时注册
+	<!--获取运营商网络状态信息，用于支持提供运营商信息相关的接口-->
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<!--用于访问wifi网络信息，wifi信息会用于进行网络定位-->
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+	<!--这个权限用于获取wifi的获取权限，wifi信息会用来进行网络定位-->
+	<uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+	<uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
+	<!-- 请求网络允许程序打开网络套接字-->
+	<uses-permission android:name="android.permission.INTERNET" />
+	<!-- 不是SDK需要的权限，是示例中的后台唤醒定位需要的权限 -->
+	<uses-permission android:name="android.permission.WAKE_LOCK" />
+	<permission android:name="android.permission.ACCESS_MOCK_LOCATION" />
+	<!--用于申请调用A-GPS模块，来提高GPS定位速度-->
+	<uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+	//定位包
+	
+	// 需要运行时注册的权限
+	<!-- 允许程序访问CellID或WiFi热点来获取粗略的位置 -->
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+	//位于group.LOCATION 权限组
+	<!--用于访问GPS定位-->
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+	//位于group.LOCATION 权限组
+	<!--写入扩展存储，向扩展卡写入数据，用于写入缓存定位数据-->
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+	//位于group.STORAGE 权限组
+	<!--读取缓存数据-->
+	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+	//位于group.STORAGE 权限组
+	<!--允许程序读写手机状态和身份-->
+	<uses-permission android:name="android.permission.READ_PHONE_STATE" />
+	//位于group.PHONE 权限组
+	<!-- 更改设置 -->
+	<uses-permission android:name="android.permission.WRITE_SETTINGS" />
+	//===================================高德地图===================================
+	<!-- 允许请求访问使用照相设备(如果使用视频通话则必选配置) -->
+	<uses-permission android:name="android.permission.CAMERA" />
+	<uses-permission android:name="android.permission.VIBRATE" />
+	<uses-permission android:name="android.permission.READ_CONTACTS" />
+	
+	<application
+		android:name=".App"
+		android:allowBackup="true"
+		android:icon="@mipmap/ic_launcher"
+		android:label="@string/app_name"
+		android:supportsRtl="true"
+		android:theme="@style/AppTheme">
+		<activity android:name=".activity.WelcomeAndGuideActivity">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN" />
+				
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+		<activity android:name=".activity.MainActivity" />
+		<activity android:name=".activity.LoginActivity" />
+		<activity android:name=".activity.RegisterActivity" />
+		<activity android:name=".activity.DownLoadActivity" />
+	
+	</application>
+
+</manifest>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:zhy="http://schemas.android.com/apk/res-auto"
+	android:id="@+id/total_layout"
+	android:orientation="vertical"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content" >
+	
+	<!--弹框的标题区。默认是竖直布局-->
+	<LinearLayout
+		android:id="@+id/title_ll"
+		android:gravity="center"
+		android:orientation="vertical"
+		android:background="#3F7F9A"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content">
+		
+		<!--标题-->
+		<TextView
+			android:id="@+id/title_tv_def"
+			android:text="检测到新的版本"
+			android:padding="5dp"
+			android:gravity="center"
+			android:textSize="18sp"
+			android:textColor="@color/white"
+			android:layout_weight="1"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent" />
+	</LinearLayout>
+	
+	<!--弹框的内容区。默认是竖直布局-->
+	<LinearLayout
+		android:id="@+id/content_ll"
+		android:gravity="center"
+		android:orientation="vertical"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content">
+		<!--标题-->
+		<TextView
+			android:id="@+id/content_tv_def"
+			android:text="更新日志"
+			android:padding="10dp"
+			android:gravity="center|left"
+			android:textSize="14sp"
+			android:textColor="@color/black"
+			android:layout_weight="1"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent" />
+	</LinearLayout>
+	<com.peipao8.vehiclelock.CustomerView.progressBar.HorizontalProgressBarWithNumber
+		android:id="@+id/download_progress"
+		android:layout_width="match_parent"
+		android:layout_height="20dp"
+		android:layout_centerVertical="true"
+		android:visibility="visible"
+		zhy:text_color="#46AD7C"
+		zhy:reached_bar_height="10dp"
+		zhy:unreached_bar_height="6dp"
+		zhy:unreached_color="#ffBCB4E8" />
+	
+	<View
+		android:layout_height="1dp"
+		android:layout_width="match_parent"
+		android:background="#3F7F9A"  />
+	
+	<!--弹框的点击区。取消或者返回-->
+	<LinearLayout
+		android:id="@+id/click_ll"
+		android:gravity="center"
+		android:orientation="horizontal"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content">
+		<!--取消-->
+		<TextView
+			android:id="@+id/cancal_tv_def"
+			android:text="忽略本次"
+			android:padding="5dp"
+			android:gravity="center"
+			android:textSize="16sp"
+			android:textColor="#0D9B8D"
+			android:layout_weight="1"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent" />
+		
+		<TextView
+			android:layout_width="1dp"
+			android:layout_height="match_parent"
+			android:background="#3F7F9A"  />
+		<!--确定-->
+		<TextView
+			android:id="@+id/confirm_tv_def"
+			android:text="下载更新"
+			android:padding="5dp"
+			android:gravity="center"
+			android:textSize="16sp"
+			android:textColor="#0D9B8D"
+			android:layout_weight="1"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent" />
+	</LinearLayout>
+	
+	<View
+		android:layout_height="1dp"
+		android:layout_width="match_parent"
+		android:background="#3F7F9A"  />
+
+</LinearLayout>
